@@ -1,0 +1,29 @@
+{
+    "version": "2.0",
+    "routeKey": "POST /api/{path+}",
+    "rawPath": "/api/delay",
+    "rawQueryString": "",
+    "headers": {
+      "accept": "*/*",
+      "content-length": "31",
+      "content-type": "application/json",
+      "x-forwarded-port": "443",
+      "x-forwarded-proto": "https"
+    },
+    "requestContext": {
+      "http": {
+        "method": "POST",
+        "path": "/api/delay",
+        "protocol": "HTTP/1.1",
+        "userAgent": "curl/7.68.0"
+      },
+      "routeKey": "POST /api/{path+}",
+      "stage": "$default"
+    },
+    "pathParameters": {
+      "path": "delay"
+    },
+    "body": "{\"success\":false, \"delay\":\"22000\"}",
+    "isBase64Encoded": false
+  }
+  
