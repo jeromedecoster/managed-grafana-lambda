@@ -41,7 +41,7 @@ resource "aws_apigatewayv2_route" "apig_route_root" {
 }
 
 resource "aws_cloudwatch_log_group" "http_log" {
-  name = "/aws/apigateway/${var.project_name}-apigateway"
+  name = "/aws/apigateway/${var.project_name}"
 }
 
 resource "aws_apigatewayv2_stage" "apig_stage" {
@@ -53,7 +53,7 @@ resource "aws_apigatewayv2_stage" "apig_stage" {
     throttling_rate_limit  = 1
   }
   access_log_settings {
-    destination_arn = "arn:aws:logs:${data.aws_region.current.name}:${data.aws_caller_identity.current.account_id}:log-group:/apigateway/prod_http"
+    destination_arn = "arn:aws:logs:${data.aws_region.current.name}:${data.aws_caller_identity.current.account_id}:log-group:${aws_cloudwatch_log_group.http_log.name}"
     format          = "$context.identity.sourceIp [$context.requestTime] \"$context.httpMethod $context.path $context.protocol\" $context.status $context.responseLength $context.requestId"
   }
 }

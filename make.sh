@@ -8,7 +8,7 @@
 AWS_PROFILE=default
 AWS_REGION=eu-west-3
 # project name
-PROJECT_NAME=cdktf-lambda-dynamodb
+PROJECT_NAME=managed-grafana-lambda
 # the directory containing the script file
 PROJECT_DIR="$(cd "$(dirname "$0")"; pwd)"
 
